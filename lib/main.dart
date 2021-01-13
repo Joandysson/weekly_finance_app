@@ -108,14 +108,17 @@ class _MyHomePageState extends State<MyHomePage> {
     final mediaQuery = MediaQuery.of(context);
     bool isLandscape = mediaQuery.orientation == Orientation.landscape;
 
-    final iconList = Platform.isIOS ? CupertinoIcons.refresh : Icons.list;
-    final iconChart = Platform.isIOS ? CupertinoIcons.refresh : Icons.bar_chart;
+    final iconList = Platform.isIOS ? CupertinoIcons.list_bullet : Icons.list;
+    final iconChart =
+        Platform.isIOS ? CupertinoIcons.chart_bar_alt_fill : Icons.bar_chart;
 
     final actions = <Widget>[
-      _getIconButton(
-        _showChart ? iconList : iconChart,
-        () => setState(() => _showChart = !_showChart),
-      ),
+      isLandscape
+          ? _getIconButton(
+              _showChart ? iconList : iconChart,
+              () => setState(() => _showChart = !_showChart),
+            )
+          : Container(),
       _getIconButton(
         Platform.isIOS ? CupertinoIcons.add : Icons.add,
         () => _openTransactionFormModal(context),
