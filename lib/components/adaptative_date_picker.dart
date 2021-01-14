@@ -46,8 +46,8 @@ class AdaptativeDatePicker extends StatelessWidget {
                 Expanded(
                   child: Text(
                     selectedDate == null
-                        ? 'Nenhuma data selecionanda'
-                        : "Data selecionada ${DateFormat('dd/MM/y').format(selectedDate)}",
+                        ? 'Nenhuma data selecionada!'
+                        : 'Data selecionada: ${DateFormat('dd/MM/y').format(selectedDate)}',
                   ),
                 ),
                 FlatButton(
