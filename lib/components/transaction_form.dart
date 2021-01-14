@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weekly_finance_app/components/adaptative_button.dart';
+import 'package:weekly_finance_app/components/adaptative_date_picker.dart';
 import 'package:weekly_finance_app/components/adaptative_text_field.dart';
-
-import 'adaptative_data_picker.dart';
 
 class TransactionForm extends StatefulWidget {
   final void Function(String, double, DateTime) onSubmit;
@@ -52,11 +51,11 @@ class _TransactionFormState extends State<TransactionForm> {
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 onSubmitted: _submitForm(),
               ),
-              AdaptativeDataPicker(
+              AdaptativeDatePicker(
                 selectedDate: _selectedDate,
-                onDateChanged: (newdate) {
+                onDateChanged: (newDate) {
                   setState(() {
-                    _selectedDate = newdate;
+                    _selectedDate = newDate;
                   });
                 },
               ),
