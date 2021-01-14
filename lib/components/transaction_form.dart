@@ -42,14 +42,14 @@ class _TransactionFormState extends State<TransactionForm> {
               AdaptativeTextField(
                 label: 'Titúlo',
                 controller: _titleController,
-                onSubmitted: _submitForm(),
+                onSubmitted: (_) => _submitForm(),
                 autofocus: true,
               ),
               AdaptativeTextField(
                 label: 'Valor R\$',
                 controller: _valueController,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
-                onSubmitted: _submitForm(),
+                onSubmitted: (_) => _submitForm(),
               ),
               AdaptativeDatePicker(
                 selectedDate: _selectedDate,
